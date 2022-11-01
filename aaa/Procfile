@@ -1,1 +1,1 @@
-worker : python translate.py
+web: gunicorn translate.wsgi
