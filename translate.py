@@ -54,6 +54,7 @@ async def message_trans(message):
      await message.reply(translater.translate(f'{message.text}', dest=f'ru').text)
     else :
      await message.reply(translater.translate(f'{message.text}' , dest=f'{lang}').text)
+    
 if __name__ == '__main__':
     aiogram.executor.start_polling(dp)
     
