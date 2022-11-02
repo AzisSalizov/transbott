@@ -44,9 +44,7 @@ async def process_callback_kb1btn1(callback_query: aiogram.types.CallbackQuery )
         if callback_query.data in cfg.LANGUES:
             lang = callback_query.data
             LangSetting.change_lang(lang=lang)
-            print(f'выбранный язык : {lang}')
             val = (lang, str(callback_query.from_user.id))
-            print(f'кортеж  {val}')
             await bot.send_message(callback_query.from_user.id, f"<strong>Вы выбрали {cfg.LANGDICT[lang]}\nВведите слово для перевода</strong>" , parse_mode='html' )
             
 @dp.message_handler() 
